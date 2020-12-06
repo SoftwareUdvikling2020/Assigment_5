@@ -12,13 +12,13 @@ public class StepDefinitions {
     private String actualAnswer;
 
     @Given("time is over {string}")
-    public void today_is(String today) {
+    public void time_is(String today) {
         this.time = today;
     }
 
     @When("I ask whether it's over 20")
-    public void i_ask_whether_it_s_Friday_yet() {
-        actualAnswer = IsItFriday.isItFriday(time);
+    public void i_ask_whether_it_s_20() {
+        actualAnswer = IsIt20.isIt20(time);
     }
 
     @Then("I should be told {string}")
@@ -27,14 +27,14 @@ public class StepDefinitions {
     }
 
     @Given("you can relax now")
-    public void today_is_Friday() {
+    public void time_is_now_20() {
         time = "20";
     }
 
 }
 
-class IsItFriday {
-    static String isItFriday(String today) {
+class IsIt20 {
+    static String isIt20(String today) {
         return "20".equals(today) ? "relax" : "Nope";
     }
 }
